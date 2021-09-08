@@ -1,0 +1,19 @@
+<h3>Toutes les Technos</h3>
+
+<!--*********** Pour interpreter une variable et l'afficher en brut ************-->
+<!-- {{allTechnos | json}} -->
+
+
+<!--********** // Pour recuperer chaque information d'une collection , comme un for Of sur la variable allTechnos******-->
+<!-- <div *ngFor="let techno of allTechnos">
+  <h4>{{ techno.technoname }}</h4>
+  <p>{{ techno.Category }}</p>
+  <p>{{ techno.details }}</p>
+</div> -->
+
+<!--********** // Pour recuperer chaque information d'une collection grâce au component details******-->
+<div *ngFor="let techno of allTechnos">
+  <!-- Pour cela on fait appel au composant en lui passant un input (un props, propriete dans react) -->
+  <!-- Etant donné que nous sommes dans techno list et l'appel app techno detail se fait à l'interieur. app techno details est considéré comme enfant. ainsi l'appelle à l'input dans le typeScript de techno details indique que l'on appelle l'information du parent. donc de la liste -->
+  <app-techno-details [tech]="techno" ></app-techno-details>
+</div>
